@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Ensures XDG directories exist
+
+mkdir -p "$XDG_CACHE_HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_HOME"
