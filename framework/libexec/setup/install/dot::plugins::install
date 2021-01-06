@@ -1,0 +1,41 @@
+#!/usr/bin/env sh
+
+# Installs a list of Dot plugins in the order specified.
+
+set -o errexit
+set -o nounset
+
+. "$DOT_FRAMEWORK_DIR/lib/shells/shared/load_env.sh"
+
+mkdir -p "$DOT_PATH_DIR"
+
+for plugin in "$@"; do
+  plugin_dir="$DOT_PLUGINS_DIR/$plugin"
+
+  # Add anything in `libexec` directories to PATH so they can be executed by
+  # this plugin or other dependent plugins during install
+  for sub_dir in libexec libexec/setup libexec/setup/install; do
+    for libexec_path in "$plugin_dir/$sub_dir"; do
+      if [ -d "$libexec_path" ]; then
+        export PATH="$libexec_path:$PATH"
+      fi
+    done
+  done
+
+  # Load any environment variables defined in relevant `env` directories
+  for sub_dir in env env/setup env/setup/install; do
+    for env_path in "$plugin_dir/$sub_dir/"*; do
+      if [ -f "$env_path" ]; then
+        if ! load_env "$env_path"; then
+          echo "ERROR: Failed to load environment variables for plugin $plugin. Halting"
+          exit 1
+        fi
+      fi
+    done
+  done
+
+  if ! dot::plugin::install "$plugin"; then
+    echo "ERROR: Failed to install plugin $plugin. Halting"
+    exit 1
+  fi
+done

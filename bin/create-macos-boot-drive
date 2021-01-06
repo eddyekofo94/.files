@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Creates a macOS boot drive from an installer app bundle.
+
+installer=$1
+if [ -z "$installer" ]; then
+  echo "First argument must be path to installer"
+  echo "(e.g. \"/Applications/Install macOS High Sierra.app\")"
+  exit 1
+fi
+
+install_volume=$2
+if [ -z "$install_volume" ]; then
+  echo "Second argument must be path to the volume you want to image"
+  echo "(e.g. \"/Volumes/MyUSBDrive\")"
+  exit 1
+fi
+
+echo "Verifying integrity of installer..."
+if ! codesign -dvv "$installer"; then
+  echo "Unable to verify installer!"
+  exit 1
+fi
+
+sudo "$installer/Contents/Resources/createinstallmedia" \
+  --volume "$install_volume"

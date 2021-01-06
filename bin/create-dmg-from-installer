@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Creates a DMG image from an OS X installer bundle.
+#
+# The DMG is useful for installing OS X on a VM.
+
+installer=$1
+if [ -z "$installer" ]; then
+  echo "First argument must be path to installer"
+  echo "(e.g. \"/Applications/Install OS X El Capitan.app\")"
+  exit 1
+fi
+
+if ! which iesd 2>&1 >/dev/null; then
+  echo "Install iesd gem with: gem install iesd"
+  exit 1
+fi
+
+min_gb=16
+free_gb=$(df --block-size=1073741824 "$PWD" | tail -n+2 | awk '{ print $4 }')
+
+if [ "$free_gb" -lt $min_gb ]; then
+  echo "You have less than $min_gb GB of disk space available in your current working directory"
+  echo "You'll need at least that much in order to generate the image"
+  exit 1
+fi
+
+# Extract "El Capitan" from the installer's full path
+img_name=$(basename --suffix=.app "$installer" | sed -e 's/Install OS X //')
+
+# Create a writeable image using the installer as a base
+iesd --input "$installer" --output "${img_name}.dmg" --type BaseSystem
+hdiutil convert "${img_name}.dmg" -format UDSP -o "${img_name}.sparseimage"
+rm "${img_name}.dmg"
+
+# Mount sparse image and copy files into it
+hdiutil mount "${img_name}.sparseimage"
+hdiutil mount "$installer/Contents/SharedSupport/InstallESD.dmg"
+cp "/Volumes/OS X Install ESD/BaseSystem".* "/Volumes/OS X Base System/"
+hdiutil detach "/Volumes/OS X Base System/"
+hdiutil detach "/Volumes/OS X Install ESD/"
+
+# Convert image back to read-only format
+hdiutil convert "${img_name}.sparseimage" -format UDZO -o "${img_name}.dmg"
+rm "${img_name}.sparseimage"

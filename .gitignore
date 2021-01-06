@@ -1,0 +1,9 @@
+# Backups created during install are stored here, so ignore them
+/.backups
+
+# Dot stores some files in here to speed up startup times
+/.cache
+
+# During install, plugin executables will be symlinked into here so we only
+# search a single directory for executables based on the shell and context
+/.path

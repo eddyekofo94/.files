@@ -1,0 +1,29 @@
+# Loads Dot runtime for a user running the Bash shell, running plugin scripts
+# for the logout sequence of a "login" shell.
+#
+# Your ~/.bash_logout should be a symlink to this file.
+#
+# Do not make changes to this file -- use Dot plugins!
+
+__file__="$HOME/.bash_logout"
+
+if [ ! -L "$__file__" ]; then
+  echo "ERROR: $__file__ must be a symlink to lib/shells/bash/bash_logout in the Dot framework"
+  echo "ERROR: You should not execute/source this script directly!"
+  echo "ERROR: Skipping initialization of Dot"
+else
+  for plugin in ${DOT_PLUGINS_DEPENDENCY_ORDER[@]}; do
+    # Define variable so plugin's interactive shell script can use it for convenience
+    DOT_PLUGIN_DIR="$DOT_PLUGINS_DIR/$plugin"
+
+    for script in "$DOT_PLUGIN_DIR/lib/logout/"*.bash; do
+      if ! source "$script"; then
+        echo "ERROR: Problem sourcing logout script $script for plugin $plugin"
+      fi
+    done
+  done
+
+  if [ -e "$HOME/.bash_logout.local" ]; then
+    source "$HOME/.bash_logout.local"
+  fi
+fi

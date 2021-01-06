@@ -1,0 +1,16 @@
+if [ -z "${INSTALL_DIR+x}" ]; then
+  if [ -z "${HOME+x}" ]; then
+    echo "ERROR: HOME environment variable not defined!"
+    exit 1
+  fi
+  INSTALL_DIR="$HOME/.files"
+fi
+
+GIT_REMOTE_URL="${GIT_REMOTE_URL:-git@github.com:sds/.files}"
+if [ -d "$INSTALL_DIR" ]; then
+  echo "Repository already exists! Skipping clone."
+else
+  git clone --recursive "$GIT_REMOTE_URL" "$INSTALL_DIR"
+fi
+
+(cd "$INSTALL_DIR" && bin/install)
