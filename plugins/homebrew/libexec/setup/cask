@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+cask_installed() {
+  cask="$1"
+  ! brew cask info "$cask" | grep "Not installed" >/dev/null 2>&1
+}
+
+install_cask() {
+  cask="$1"
+  if ! cask_installed "$cask"; then
+    brew cask install "$cask"
+  fi
+}
+
+uninstall_cask() {
+  cask="$1"
+  if cask_installed "$cask"; then
+    brew cask uninstall "$cask"
+  fi
+}
+
+cask() {
+  cask="$1"
+  if dot::installing; then
+    install_cask "$cask"
+  else
+    uninstall_cask "$cask"
+  fi
+}
+
+cask "$@"

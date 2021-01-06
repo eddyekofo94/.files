@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+tap_installed() {
+  tap="$1"
+  brew tap | grep "^$tap$" >/dev/null 2>&1
+}
+
+install_tap() {
+  tap="$1"
+  if ! tap_installed "$tap"; then
+    brew tap "$tap"
+  fi
+}
+
+uninstall_tap() {
+  tap="$1"
+  if tap_installed "$tap"; then
+    brew untap "$tap"
+  fi
+}
+
+tap() {
+  tap="$1"
+
+  if dot::installing; then
+    install_tap "$tap"
+  else
+    uninstall_tap "$tap"
+  fi
+}
+
+tap "$@"
