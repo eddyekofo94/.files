@@ -21,21 +21,23 @@ Contains my personal development environment configuration files. I use the
 | starship         | ✅     |
 | bat              | ✅     |
 | terminal         | ✅     |
-| docker           | [ ]    |
-| mysql            | [ ]    |
-| nvim             | [ ]    |
-| vim              | [ ]    |
-| postgres         | [ ]    |
-| mac-os           | [ ]    |
-| linux            | [ ]    |
-| iterm2           | [ ]    |
-| alacritty        | [ ]    |
+| docker           | ❌     |
+| mysql            | ❌     |
+| nvim             | ❌     |
+| vim              | ❌     |
+| postgres         | ❌     |
+| mac-os           | ❌     |
+| linux            | ❌     |
+| iterm2           | ❌     |
+| alacritty        | ❌     |
 | curl             | ✅     |
 | wget             | ✅     |
 
 | Languages | Status |
 | --------- | ------ |
-| C++       |        |
-| Rust      |        |
+| C++       | ❌     |
+| Rust      | ❌     |
+| Java      | ❌     |
+| Jython    | ❌     |
 
 I highly recommend you curate your own configuration using the Dot framework
