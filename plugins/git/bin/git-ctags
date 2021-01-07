@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+set -e
+trap "rm -f .git/tags.$$" EXIT
+echo "Indexing tags..."
+err_file=.git/ctags.err
+if ctags --tag-relative -Rf.git/tags.$$ --exclude=.git "$@" 2>${err_file}; then
+  mv .git/tags.$$ .git/tags
+  [ -e ${err_file} ] && rm ${err_file}
+else
+  # Ignore STDERR unless `ctags` returned a non-zero exit code
+  cat ${err_file}
+fi

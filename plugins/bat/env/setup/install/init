@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+BAT_THEMES_DIR=$(bat --config-dir)/themes
+
+if [[ ! -d $BAT_THEMES_DIR ]]; then
+    echo "Making a new bat dir: $BAT_THEMES_DIR"
+    mkdir -p $BAT_THEMES_DIR
+
+    cd $BAT_THEMES_DIR
+    # Download a theme in '.tmTheme' format, for example:
+    git clone https://github.com/greggb/sublime-snazzy
+
+    # Update the binary cache
+    bat cache --build
+fi

@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+formula_installed() {
+  formula="$1"
+  ! brew info "$formula" | grep "Not installed" >/dev/null 2>&1
+}
+
+install_formula() {
+  formula="$1"
+  shift # Remaining args are flags
+  if ! formula_installed "$formula"; then
+    brew install "$formula" "$@"
+  fi
+}
+
+uninstall_formula() {
+  formula="$1"
+  if formula_installed "$formula"; then
+    brew uninstall "$formula"
+  fi
+}
+
+formula() {
+  formula="$1"
+  shift
+
+  if dot::installing; then
+    install_formula "$formula" "$@"
+  else
+    uninstall_formula "$formula"
+  fi
+}
+
+formula "$@"
