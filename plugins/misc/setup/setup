@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# Silence "Last login at ..." login message
+dot::symlink "$HOME/.hushlogin" "$DOT_PLUGIN_DIR/etc/hushlogin"
+
+formula htop
+formula iftop
+formula pstree
+formula pwgen
+formula tree
