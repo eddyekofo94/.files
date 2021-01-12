@@ -2,7 +2,8 @@
 
 curl -L https://get.oh-my.fish > install &&
 fish install --path=~/.local/share/omf --config=~/.config/omf &&
-omf install https://github.com/jhillyerd/plugin-git bang-bang
+omf install https://github.com/jhillyerd/plugin-git bang-bang;
+omf install https://github.com/edc/bass
 
 # key bindings
 # bang-bang
