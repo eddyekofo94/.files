@@ -21,3 +21,8 @@ set -g fish_color_selection 'white'  '--bold'  '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
+set -x SHELL /bin/bash
+
+function fish_user_key_bindings
+  fish_vi_key_bindings
+end
