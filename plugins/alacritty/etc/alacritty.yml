@@ -1,4 +1,26 @@
+# Setup term for programs to be able to use it
+env:
+  TERM: alacritty
+window:
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+
+  # Startup Mode (changes require restart)
+  startup_mode: Fullscreen
 font:
+  normal:
+    family: Iosevka Nerd Font Mono
+    style: Regular
+  bold:
+    family: Iosevka Nerd Font Mono
+    style: Bold
+  italic:
+    family: Iosevka Nerd Font Mono
+    style: Italic
+  bold_italic:
+    family: Iosevka Nerd Font Mono
+    style: Bold Italic
+  use_thin_strokes: true
   size: 18.0
 selection:
   # This string contains all characters that are used as separators for
@@ -90,3 +112,9 @@ key_bindings:
   - { key: Key7, mods: Alt, chars: "¶" }
   - { key: Key8, mods: Alt, chars: "•" }
   - { key: Key9, mods: Alt, chars: "ª" }
+    # This is a Hack to open new windows. Remove: when there the official setting
+  - {
+      key: N,
+      mods: Command,
+      command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] },
+    }
