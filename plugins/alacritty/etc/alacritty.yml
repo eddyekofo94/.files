@@ -3,7 +3,7 @@ env:
   TERM: alacritty
 window:
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: true
+  ## dynamic_padding: true
 
   # Startup Mode (changes require restart)
   startup_mode: Fullscreen
@@ -102,6 +102,8 @@ colors:
     cyan: "#6d96a5"
     white: "#aeb3bb"
 key_bindings:
+  - { key: Period, mods: Alt, chars: "\x1b." }
+  - { key: Key3, mods: Alt, chars: "#" }
   - { key: Key0, mods: Alt, chars: "º" }
   - { key: Key1, mods: Alt, chars: "¡" }
   - { key: Key2, mods: Alt, chars: "€" }
