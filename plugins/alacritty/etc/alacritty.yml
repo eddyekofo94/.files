@@ -6,6 +6,31 @@ selection:
   semantic_escape_chars: ",?`|:\"' ()[]{}<>\t"
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: true
+cursor:
+  style: Block
+  unfocused_hollow: true
+# Live config reload (changes require restart)
+live_config_reload: true
+# Tell Alacritty that we are using fish here
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - --login
+mouse:
+  url:
+    launcher:
+      # This depends on your OS
+      program: open
+  modifier: Command
+scrolling:
+  # Specifying '0' will disable scrolling.
+  history: 100000
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 3
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
 colors:
   primary:
     background: "#2e3440"
