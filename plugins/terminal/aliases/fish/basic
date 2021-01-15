@@ -1,0 +1,6 @@
+# Fast shortcuts
+alias c='clear'
+alias r='reset'
+alias q='exit'
+alias o="open"
+
