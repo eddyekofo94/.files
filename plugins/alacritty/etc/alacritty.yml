@@ -4,21 +4,27 @@ env:
 window:
   # Spread additional padding evenly around the terminal content.
   ## dynamic_padding: true
-
+  # Adds this many blank pixels of padding around the window
+  # Units are physical pixels; this is not DPI aware.
+  # (change requires restart)
+  padding:
+    x: 4
+    y: 2
+  decorations: none
   # Startup Mode (changes require restart)
   startup_mode: Fullscreen
 font:
   normal:
-    family: Iosevka Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Regular
   bold:
-    family: Iosevka Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Bold
   italic:
-    family: Iosevka Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Italic
   bold_italic:
-    family: Iosevka Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Bold Italic
   use_thin_strokes: true
   size: 18.0
@@ -103,7 +109,6 @@ colors:
     white: "#aeb3bb"
 key_bindings:
   - { key: Period, mods: Alt, chars: "\x1b." }
-  - { key: Key3, mods: Alt, chars: "#" }
   - { key: Key0, mods: Alt, chars: "º" }
   - { key: Key1, mods: Alt, chars: "¡" }
   - { key: Key2, mods: Alt, chars: "€" }
