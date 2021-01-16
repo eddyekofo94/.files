@@ -15,19 +15,19 @@ window:
   startup_mode: Fullscreen
 font:
   normal:
-    family: JetBrainsMono Nerd Font Mono
+    family: UbuntuMono Nerd Font Mono
     style: Regular
   bold:
-    family: JetBrainsMono Nerd Font Mono
+    family: UbuntuMono Nerd Font Mono
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: UbuntuMono Nerd Font Mono
     style: Italic
   bold_italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: UbuntuMono Nerd Font Mono
     style: Bold Italic
   use_thin_strokes: true
-  size: 18.0
+  size: 20.0
 selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
