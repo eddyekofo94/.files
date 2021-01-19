@@ -72,3 +72,4 @@ else
     source "$HOME/.bashrc.local"
   fi
 fi
+source "$HOME/.cargo/env"
