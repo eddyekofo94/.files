@@ -1,4 +1,5 @@
 # Fish syntax highlighting
+set -gx TERM screen-256color-bce # sets fish as the default terminal
 set -g fish_color_autosuggestion 'aaa' 'brblack'
 set -g fish_color_cancel -r
 set -g fish_color_command 'green' --bold
@@ -21,7 +22,7 @@ set -g fish_color_selection 'white' '--bold' '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
-# set -x SHELL /usr/local/bin/fish
+# set -gx SHELL fish
 
 function fish_user_key_bindings
     fish_vi_key_bindings

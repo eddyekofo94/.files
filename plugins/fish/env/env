@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+export SHELL="/usr/local/bin/fish"
