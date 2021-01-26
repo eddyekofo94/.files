@@ -54,3 +54,4 @@ else
     source "$HOME/.zshenv.local"
   fi
 fi
+source "$HOME/.cargo/env"

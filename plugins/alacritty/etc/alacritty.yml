@@ -1,0 +1,127 @@
+# Setup term for programs to be able to use it
+env:
+  TERM: alacritty
+window:
+  # Spread additional padding evenly around the terminal content.
+  ## dynamic_padding: true
+  # Adds this many blank pixels of padding around the window
+  # Units are physical pixels; this is not DPI aware.
+  # (change requires restart)
+  padding:
+    x: 4
+    y: 2
+  decorations: none
+  # Startup Mode (changes require restart)
+  startup_mode: Fullscreen
+font:
+  normal:
+    family: UbuntuMono Nerd Font Mono
+    style: Regular
+  bold:
+    family: UbuntuMono Nerd Font Mono
+    style: Bold
+  italic:
+    family: UbuntuMono Nerd Font Mono
+    style: Italic
+  bold_italic:
+    family: UbuntuMono Nerd Font Mono
+    style: Bold Italic
+  use_thin_strokes: true
+  size: 20.0
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  semantic_escape_chars: ",?`|:\"' ()[]{}<>\t"
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+cursor:
+  style: Block
+  unfocused_hollow: true
+# Live config reload (changes require restart)
+live_config_reload: true
+# Tell Alacritty that we are using fish here
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - --login
+mouse:
+  url:
+    launcher:
+      # This depends on your OS
+      program: open
+  modifier: Command
+scrolling:
+  # Specifying '0' will disable scrolling.
+  history: 100000
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 3
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+colors:
+  primary:
+    background: "#2e3440"
+    foreground: "#d8dee9"
+    dim_foreground: "#a5abb6"
+  cursor:
+    text: "#2e3440"
+    cursor: "#d8dee9"
+  vi_mode_cursor:
+    text: "#2e3440"
+    cursor: "#d8dee9"
+  selection:
+    text: CellForeground
+    background: "#4c566a"
+  search:
+    matches:
+      foreground: CellBackground
+      background: "#88c0d0"
+    bar:
+      background: "#434c5e"
+      foreground: "#d8dee9"
+  normal:
+    black: "#3b4252"
+    red: "#bf616a"
+    green: "#a3be8c"
+    yellow: "#ebcb8b"
+    blue: "#81a1c1"
+    magenta: "#b48ead"
+    cyan: "#88c0d0"
+    white: "#e5e9f0"
+  bright:
+    black: "#4c566a"
+    red: "#bf616a"
+    green: "#a3be8c"
+    yellow: "#ebcb8b"
+    blue: "#81a1c1"
+    magenta: "#b48ead"
+    cyan: "#8fbcbb"
+    white: "#eceff4"
+  dim:
+    black: "#373e4d"
+    red: "#94545d"
+    green: "#809575"
+    yellow: "#b29e75"
+    blue: "#68809a"
+    magenta: "#8c738c"
+    cyan: "#6d96a5"
+    white: "#aeb3bb"
+key_bindings:
+  - { key: Period, mods: Alt, chars: "\x1b." }
+  - { key: Key0, mods: Alt, chars: "º" }
+  - { key: Key1, mods: Alt, chars: "¡" }
+  - { key: Key2, mods: Alt, chars: "€" }
+  - { key: Key3, mods: Alt, chars: "#" }
+  - { key: Key4, mods: Alt, chars: "¢" }
+  - { key: Key5, mods: Alt, chars: "∞" }
+  - { key: Key6, mods: Alt, chars: "§" }
+  - { key: Key7, mods: Alt, chars: "¶" }
+  - { key: Key8, mods: Alt, chars: "•" }
+  - { key: Key9, mods: Alt, chars: "ª" }
+    # This is a Hack to open new windows. Remove: when there the official setting
+  - {
+      key: N,
+      mods: Command,
+      command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] },
+    }

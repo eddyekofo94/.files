@@ -64,3 +64,4 @@ else
     source "$HOME/.bashrc"
   fi
 fi
+source "$HOME/.cargo/env"

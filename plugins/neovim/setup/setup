@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+dot::repo "git@github.com:eddyekofo94/nvim.git" "$NVIM_PERSONAL_DIR"
+
+if dot::os::mac; then
+    # Install the nightly build of neovim
+    formula --HEAD neovim
+    brew link --overwrite neovim
+fi

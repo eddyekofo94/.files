@@ -37,3 +37,5 @@ else
     source "$HOME/.zshrc.local"
   fi
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

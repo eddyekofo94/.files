@@ -1,0 +1,5 @@
+dot::symlink "$HOME/.ctags" "$DOT_PLUGIN_DIR/ctags"
+
+if dot::os::mac; then
+  formula ctags
+fi

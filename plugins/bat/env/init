@@ -1,1 +1,1 @@
-export BAT_CONFIG_PATH="$HOME/.files/plugins/bat/lib/login/bat.conf"
+export BAT_CONFIG_PATH="$DOT_PLUGINS_DIR/bat/lib/login/bat.conf"

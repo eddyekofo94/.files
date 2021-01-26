@@ -7,12 +7,12 @@ Contains my personal development environment configuration files. I use the
 
 ## TODO & DONE
 
-| Plugin           | Status |
-| ---------------- | ------ |
+| Plugin           | Status | Improvements                                   |
+| ---------------- | ------ | ---------------------------------------------- |
 | homebrew         | ✅     |
 | ripgrep          | ✅     |
 | fd               | ✅     |
-| fish             | ✅     |
+| fish             | ✅     | Link the function key file file to a local one |
 | fzf              | ✅     |
 | git              | ✅     |
 | grep             | ✅     |
