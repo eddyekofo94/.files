@@ -22,7 +22,7 @@ set -g fish_color_selection 'white' '--bold' '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
-# set -gx SHELL fish
+set -gx SHELL fish
 
 function fish_user_key_bindings
     fish_vi_key_bindings
