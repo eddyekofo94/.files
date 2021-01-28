@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+formula cmake
+npm -g install cmake-language-server # for development
