@@ -39,7 +39,6 @@ set __fish_git_prompt_color_upstream_ahead $green
 set __fish_git_prompt_color_upstream_behind $red
 set __fish_git_prompt_color_dirtystate $red
 set __fish_git_prompt_color_stagedstate $green
-set -g __fish_git_prompt_showupstream auto
 
 # Completion Pager Colors
 set -g fish_pager_color_progress $comment
