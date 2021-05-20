@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm';
+
 local colors = {
     none = "NONE",
     bg_dark = "#1f2335",
