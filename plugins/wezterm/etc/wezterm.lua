@@ -50,5 +50,5 @@ return {
             }
         }
     },
-    colors_scheme_dirs = {"$HOME/.config/wezterm/colors"}
+    colors_scheme_dirs = {"$HOME/.config/wezterm/colors"},
 }
