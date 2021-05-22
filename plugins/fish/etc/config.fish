@@ -1,5 +1,6 @@
 # Fish syntax highlighting
-theme_gruvbox
+theme_gruvbox dark medium
+
 
 set -x SHELL /usr/local/bin/fish
 
