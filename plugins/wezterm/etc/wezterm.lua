@@ -33,11 +33,14 @@ local colors = {
 }
 
 return {
+    enable_csi_u_key_encoding = true,
+    check_for_updates = true,
     font = wezterm.font("UbuntuMono Nerd Font Mono", {weight = "Regular"}),
     color_scheme = "TokyoNight",
     font_size = 20.0,
     bold_brightens_ansi_colors = true,
     hide_tab_bar_if_only_one_tab = true,
+    cursor_blink_rate = 800,
     colors = {
         tab_bar = {
             background = colors.bg_dark,
@@ -50,5 +53,5 @@ return {
             }
         }
     },
-    colors_scheme_dirs = {"$HOME/.config/wezterm/colors"},
+    colors_scheme_dirs = {"$HOME/.config/wezterm/colors"}
 }
