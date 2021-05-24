@@ -1,6 +1,6 @@
 # Setup term for programs to be able to use it
 env:
-  TERM: alacritty
+  TERM: xterm-256color
 window:
   # Spread additional padding evenly around the terminal content.
   ## dynamic_padding: true
@@ -45,11 +45,13 @@ shell:
   args:
     - --login
 mouse:
+  modifier: Command
+  hide_when_typing: true
+hints:
   url:
     launcher:
       # This depends on your OS
       program: open
-  modifier: Command
 scrolling:
   # Specifying '0' will disable scrolling.
   history: 100000
@@ -59,37 +61,97 @@ scrolling:
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
-colors:
+
+schemes:
+  gruvbox: &gruvbox
+    primary:
+      background: '0x212121'
+    normal:
+      black:   '0x282828'
+      red:     '0xcc241d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0xa89984'
+    bright:
+      black:   '0x928374'
+      red:     '0xfb4934'
+      green:   '0xb8bb26'
+      yellow:  '0xfabd2f'
+      blue:    '0x83a598'
+      magenta: '0xd3869b'
+      cyan:    '0x8ec07c'
+      white:   '0xebdbb2'
+
+# gruvbox flat Alacritty Colors
+  gruvbox_flat: &gruvbox_flat
+    # Default colors
+    primary:
+      background: '0x282828'
+      foreground: '0xd4be98'
+
+    # Normal colors
+    normal:
+      black:   '0x262627'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+
+    # Bright colors
+    bright:
+      black:   '0x32302f'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+
+    indexed_colors:
+      - { index: 16, color: '0xe78a4e' }
+      - { index: 17, color: '0xc14a4a' }
+
+  tokyonight: &tokyonight
   # Default colors
-  primary:
-    background: '0x24283b'
-    foreground: '0xc0caf5'
+    primary:
+      background: '0x24283b'
+      foreground: '0xc0caf5'
 
-  # Normal colors
-  normal:
-    black:   '0x1D202F'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xa9b1d6'
+    # Normal colors
+    normal:
+      black:   '0x1D202F'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xa9b1d6'
 
-  # Bright colors
-  bright:
-    black:   '0x1D202F'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xc0caf5'
+    # Bright colors
+    bright:
+      black:   '0x1D202F'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xc0caf5'
 
-  indexed_colors:
-    - { index: 16, color: '0xff9e64' }
-    - { index: 17, color: '0xdb4b4b' }
+    indexed_colors:
+      - { index: 16, color: '0xff9e64' }
+      - { index: 17, color: '0xdb4b4b' }
+
+colors: *gruvbox_flat
+
 key_bindings:
   - { key: Period, mods: Alt, chars: "\x1b." }
   - { key: Key0, mods: Alt, chars: "º" }
