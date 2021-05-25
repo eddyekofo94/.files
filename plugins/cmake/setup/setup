@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+formula cmake
+pip install cmake-language-server # for development

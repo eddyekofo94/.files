@@ -22,3 +22,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Directory where user-specific non-essential data files should be stored.
 export XDG_CACHE_HOME="$HOME/.cache"
+
+# add ruby gems to path
+PATH=$PATH:/usr/local/lib/ruby/gems/3.0.0/bin

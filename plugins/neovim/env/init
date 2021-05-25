@@ -2,6 +2,8 @@
 #export NVIM_PERSONAL_DIR="$DOT_PLUGINS_DIR/neovim/nvim"
 #export NVIM_PERSONAL_INIT="$DOT_PLUGINS_DIR/neovim/ginit.vim"
 export XDG_CONFIG_HOME="$HOME/.config"
-export MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim"
+export MYVIMRC="$XDG_CONFIG_HOME/nvim/init.lua"
 
 export TERM=xterm-256color
+
+export PATH="$HOME/.config/nvim/utils/bin:$PATH" 

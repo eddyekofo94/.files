@@ -9,6 +9,8 @@ if [[ ! -d $BAT_THEMES_DIR ]]; then
     cd $BAT_THEMES_DIR
     # Download a theme in '.tmTheme' format, for example:
     git clone https://github.com/greggb/sublime-snazzy
+    # get the Enki-Tokyo-Night theme
+    wget https://raw.githubusercontent.com/enkia/enki-theme/master/scheme/Enki-Tokyo-Night.tmTheme
 
     # Update the binary cache
     bat cache --build
