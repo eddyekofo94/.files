@@ -1,4 +1,12 @@
 #!/usr/bin/fish
+# set this when using the theme
+# theme_gruvbox dark medium
+
+# if status --is-interactive
+#         theme_gruvbox dark medium
+# end
+
+
 function theme_gruvbox --description 'Apply gruvbox theme'
   set -l mode 'light'
   if test  (count $argv) -gt 0
