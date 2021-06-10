@@ -1,0 +1,151 @@
+tap "eth-p/software"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "jason0x43/neovim-nightly"
+tap "universal-ctags/universal-ctags"
+tap "wez/wezterm"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Shell extension to jump to frequently used directories
+brew "autojump"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Fish completion for brew-cask
+brew "brew-cask-completion"
+# Object-file caching compiler wrapper
+brew "ccache"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
+# Cross-platform make
+brew "cmake"
+# Distributed, open source, package manager for C/C++
+brew "conan"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Static analysis of C and C++ code
+brew "cppcheck"
+# Reimplementation of ctags(1)
+brew "ctags"
+# GNU internationalization (i18n) and localization (l10n) library
+brew "gettext"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
+# Pack, ship and run any application as a lightweight container
+brew "docker", link: false
+# Isolated development environments using Docker
+brew "docker-compose", link: false
+# LLVM bytecode to JavaScript compiler
+brew "emscripten"
+# Modern replacement for 'ls'
+brew "exa"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU debugger
+brew "gdb"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Blazing fast terminal-ui for git written in rust
+brew "gitui"
+# Improved top (interactive process viewer)
+brew "htop"
+# Display an interface's bandwidth usage
+brew "iftop"
+# Network authentication protocol
+brew "krb5"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Postgres C API library
+brew "libpq"
+# Generic library support script
+brew "libtool"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Powerful, lightweight programming language
+brew "lua"
+# Just-In-Time Compiler (JIT) for the Lua programming language
+brew "luajit", args: ["HEAD"]
+# Package manager for the Lua programming language
+brew "luarocks"
+# Cross platform, open source .NET development framework
+brew "mono", link: false
+# Small build system for use with gyp or CMake
+brew "ninja"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# Show ps output as a tree
+brew "pstree"
+# Password generator
+brew "pwgen"
+# Python version management
+brew "pyenv"
+# File browser
+brew "ranger"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rust"
+# Experimental Rust compiler front-end for IDEs
+brew "rust-analyzer"
+# Multi-media library with bindings for multiple languages
+brew "sfml"
+# Code-search similar to ack
+brew "the_silver_searcher"
+# Text interface for Git repositories
+brew "tig"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Vi 'workalike' with many additional features
+brew "vim"
+# Generator for LS_COLORS with support for multiple color themes
+brew "vivid"
+# Internet file retriever
+brew "wget"
+# JavaScript package manager
+brew "yarn"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# Bash scripts that integrate bat with various command-line tools
+brew "eth-p/software/bat-extras"
+# A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
+brew "wez/wezterm/wezterm"
+# GPU-accelerated terminal emulator
+cask "alacritty"
+cask "font-camingocode"
+cask "font-fira-code"
+cask "font-hack-nerd-font"
+cask "font-iosevka-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-monoid-nerd-font"
+cask "font-ubuntu-mono-nerd-font"
+# GPU-based terminal emulator
+cask "kitty"
+# Open source implementation of Microsoft's .NET Framework
+cask "mono-mdk-for-visual-studio"
+cask "neovim-nightly"
+# Collaboration platform for API development
+cask "postman"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# GUI for the Neovim text editor
+cask "vimr"
+# Integrated development environment
+cask "visual-studio"
