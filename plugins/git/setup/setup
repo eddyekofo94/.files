@@ -8,3 +8,5 @@ dot::symlink "$XDG_CONFIG_HOME/git/config" "$DOT_PLUGIN_DIR/etc/gitconfig"
 dot::symlink "$XDG_CONFIG_HOME/git/ignore" "$DOT_PLUGIN_DIR/etc/gitignore"
 
 dot::symlink "$XDG_CONFIG_HOME/tig/config" "$DOT_PLUGIN_DIR/etc/tigrc"
+
+dot::symlink "$HOME/.gitconfig" "$DOT_PLUGIN_DIR/etc/.gitconfig"
