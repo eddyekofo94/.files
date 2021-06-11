@@ -41,7 +41,7 @@ end
 function __theme_gruvbox_base
   __printf_color 1 'ea/69/62'
   __printf_color 2 'a9/b6/65'
-  __printf_color 3 'd8/a6/57' # Change to flat colors
+  __printf_color 3 'd8/a6/57'
   __printf_color 4 '7d/ae/a3'
   __printf_color 5 'd3/86/9b'
   __printf_color 6 '89/b4/82'
