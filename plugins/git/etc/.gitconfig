@@ -25,7 +25,7 @@
     diffFilter = delta --color-only
 
 [delta "decorations"]
-    commit-decoration-style = bold yellow box ul
+    commit-decoration-style = bold yellow ul
     file-style = bold blue ul
     file-decoration-style = none
     hunk-header-decoration-style = "#5a524c" box ul
