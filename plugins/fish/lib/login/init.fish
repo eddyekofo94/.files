@@ -1,4 +1,7 @@
-set this when using the theme
+# Enables vim keybindings
+fish_vi_key_bindings
+
+# set this when using the theme
 theme_gruvbox dark
 
 if status --is-interactive
@@ -7,6 +10,3 @@ end
 
 set -x SHELL /usr/local/bin/fish
 
-function fish_user_key_bindings
-    fish_vi_key_bindings
-end
