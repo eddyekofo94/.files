@@ -78,7 +78,7 @@ function __theme_gruvbox_dark
     case "soft"
       set bg '32/30/2f'
     case "hard"
-      set bg '1d/20/21'
+      set bg '1a/1a/1a'
   end
   command printf "\033]11;rgb:$bg\007"
 
@@ -99,7 +99,7 @@ end
 
 function __theme_gruvbox_palette
   __printf_color 236 32302f
-  __printf_color 234 1d2021
+  __printf_color 234 1a1a1a
 
   __printf_color 235 282828
   __printf_color 237 3c3836
