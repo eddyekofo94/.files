@@ -37,3 +37,5 @@
     line-numbers-right-style = "#5a524c"
     line-numbers-zero-style = "#5a524c"
 
+[diff]
+	ignoreSubmodules = dirty
