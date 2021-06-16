@@ -1,1 +1,1 @@
-source $HOME/.cargo/env
+sh $HOME/.cargo/env

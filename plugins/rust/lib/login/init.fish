@@ -1,1 +1,2 @@
-source $HOME/.cargo/env
+sh $HOME/.cargo/env
+abbr --add cg 'cargo'
