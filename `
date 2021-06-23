@@ -26,3 +26,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # add ruby gems to path
 PATH=$PATH:/usr/local/lib/ruby/gems/3.0.0/bin
 
+# export CPPFLAGS="$CPPFLAGS -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers/X11/" # pip install -r requirements.txt
+# export CPLUS_INCLUDE_PATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1"
+# export CPLUS_INCLUDE_PATH="/Library/Developer/CommandLineTools/usr/include/c++/v1"
