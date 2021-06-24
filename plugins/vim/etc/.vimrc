@@ -22,14 +22,22 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'numtostr/gruvbox-material' " My fav theme
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+Plug 'mbbill/undotree'
+Plug 'tpope/vim-surround'
+Plug 'szw/vim-maximizer'
+Plug 'ryanoasis/vim-devicons'
+
 
 " Initialize plugin system
 call plug#end()
 
 source ~/.vim/after/which-key.vim
+source ~/.vim/autoload/keys.vim
 
 colo gruvbox-material
 " Sets: - general conghigs
@@ -51,6 +59,7 @@ set splitbelow         " Horizontal splits will automatically be below
 set splitright         " Vertical splits will automatically be to the right
 set conceallevel=0     " So that I can see `` in markdown files
 set cursorline         " Enable highlighting of the current line
+set cursorcolumn       " Enable column highlight
 set showtabline=2      " Always show tabs
 set tabstop=4          " Insert 4 spaces for a tab
 set tabstop=4 softtabstop=4
@@ -66,12 +75,12 @@ set hidden                              " Keep all the buffers open in the backg
 set noerrorbells
 set noswapfile
 set nobackup
-set timeoutlen=1000                      " By default timeoutlen is 1000 ms
+set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set shiftround                          " For better indentation"
-set clipboard=unnamedplus               " Copy paste between vim and everything else
+set clipboard=unnamed               " Copy paste between vim and everything else
 set guifont=JetBrainsMono\ Nerd\ Font
 set nowritebackup                       " This is recommended by coc
-set undodir=~/.config/nvim/undodir  " Need a proper pluggin for it, all for keeping files saved
+set undodir=~/.vim/undodir  " Need a proper pluggin for it, all for keeping files saved
 set undofile
 set termguicolors
 set scrolloff=10                         " start scholling when you're near the bottom by 8
@@ -81,6 +90,7 @@ set complete+=kspell                    " INFO: :take a look into this option"
 set completeopt=menuone,noinsert,noselect
 set virtualedit=block
 set signcolumn=yes                      " It sets the collum in the gutter for linting sake
+set hlsearch
 syntax enable                           " Enabling syntax highlight
 
 " Decent wildmenu
@@ -123,7 +133,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set list
 " settings for hidden chars
 :set list
-:set listchars=tab:→\ ,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+:set listchars=tab:→\ ,nbsp:␣,trail:•,eol:↵,precedes:«,extends:»
 
 set foldmethod=expr
 " Leave paste mode when leaving insert mode
@@ -133,16 +143,14 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 2
 let g:netrw_winsize = 25
 " let g:netrw_localrmdir='rm -r'
+" fzf window position settings
+
+let g:fzf_preview_direct_window_option = 'right'
 
 augroup AutoDeleteNetrwHiddenBuffers
   au!
   au FileType netrw setlocal bufhidden=wipe
 augroup end
-
-augroup highlight_yank
-    autocmd!
-    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
-augroup END
 
 function! MaxLineChars()
     let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
@@ -174,53 +182,14 @@ if has("autocmd")
   au BufReadPost * if expand('%:p') !~# '\m/\.git/' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-augroup highlight_yank
-    autocmd!
-    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
-augroup END
 " You can't stop me
 cmap w!! w !sudo tee %
-
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " CPP setup done using this tutorial https://xuechendi.github.io/2019/11/11/VIM-CPP-IDE-2019-111-11-VIM_CPP_IDE
 " Code formatting
 autocmd FileType c,cpp,h,hpp,proto,javascript AutoFormatBuffer clang-format
 
-
-" Better window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" HARD MODE - Disabled arrows
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
-" Which mappings for what
-" Better indenting
-vnoremap < <gv
-vnoremap > >gv
-
 " inoremap <M-I>      <C-O>^ "TODO see the def of this mapping from TPope
-
-" TAB in general mode will move to text buffer
-nnoremap <silent> <TAB> :bnext<CR>
-" SHIFT-TAB will go back
-nnoremap <silent> <S-TAB> :bprevious<CR>
-
-" Split to the right
-nnoremap <leader>v :vsplit<CR>,l<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -270,4 +239,6 @@ nmap <leader>f  <Plug>(coc-format-selected)
 " Remap for do codeAction of selected region,
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 
