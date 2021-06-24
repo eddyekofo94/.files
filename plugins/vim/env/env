@@ -1,0 +1,3 @@
+
+export VIM_CONFIG="$HOME/.vim"
+export VIMRC="$HOME/.vimrc"
