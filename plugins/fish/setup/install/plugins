@@ -1,3 +1,4 @@
 #!/usr/bin/env fish
 
-fisher install version 4.1.0
+# List of plugins to install
+# fisher install IlanCosman/tide # installs the prompt

@@ -1,3 +1,4 @@
+
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
 # --hidden: Search hidden files and folders
@@ -7,4 +8,3 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --no-require-git --no-ign
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# export FZF_DEFAULT_OPTS

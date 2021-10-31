@@ -15,19 +15,19 @@ window:
   startup_mode: Fullscreen
 font:
   normal:
-    family: UbuntuMono Nerd Font Mono
+    family: CamingoCode Nerd Font
     style: Regular
   bold:
-    family: UbuntuMono Nerd Font Mono
+    family: CamingoCode Nerd Font
     style: Bold
   italic:
-    family: UbuntuMono Nerd Font Mono
+    family: CamingoCode Nerd Font
     style: Italic
   bold_italic:
-    family: UbuntuMono Nerd Font Mono
+    family: CamingoCode Nerd Font
     style: Bold Italic
   use_thin_strokes: true
-  size: 20.0
+  size: 18.5
 selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
@@ -117,38 +117,6 @@ schemes:
     indexed_colors:
       - { index: 16, color: '0xe78a4e' }
       - { index: 17, color: '0xc14a4a' }
-
-  tokyonight: &tokyonight
-  # Default colors
-    primary:
-      background: '0x24283b'
-      foreground: '0xc0caf5'
-
-    # Normal colors
-    normal:
-      black:   '0x1D202F'
-      red:     '0xf7768e'
-      green:   '0x9ece6a'
-      yellow:  '0xe0af68'
-      blue:    '0x7aa2f7'
-      magenta: '0xbb9af7'
-      cyan:    '0x7dcfff'
-      white:   '0xa9b1d6'
-
-    # Bright colors
-    bright:
-      black:   '0x1D202F'
-      red:     '0xf7768e'
-      green:   '0x9ece6a'
-      yellow:  '0xe0af68'
-      blue:    '0x7aa2f7'
-      magenta: '0xbb9af7'
-      cyan:    '0x7dcfff'
-      white:   '0xc0caf5'
-
-    indexed_colors:
-      - { index: 16, color: '0xff9e64' }
-      - { index: 17, color: '0xdb4b4b' }
 
 colors: *gruvbox_flat
 

@@ -1,0 +1,1 @@
+sh $HOME/.cargo/env

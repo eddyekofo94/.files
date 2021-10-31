@@ -1,3 +1,6 @@
 #!/usr/bin/env sh
 
 formula fish
+
+dot::symlink "$XDG_CONFIG_HOME/fish/functions/theme_gruvbox.fish" "$DOT_PLUGIN_DIR/etc/theme_gruvbox.fish"
+

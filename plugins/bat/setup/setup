@@ -2,5 +2,8 @@
 
 if dot::os::mac; then
   formula bat
+  formula eth-p/software/bat-extras
 fi
+
+bat cache --build
 
