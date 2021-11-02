@@ -6,7 +6,7 @@
 	path =  ./plugins/neovim/nvim/
 	url = git@github.com:eddyekofo94/nvim.git
 
-[submodule "nvim"]
+[submodule "vim"]
 	path =  ./plugins/vim/.vim/
 	url = git@github.com:eddyekofo94/.vim.git
 
