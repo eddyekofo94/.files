@@ -5,6 +5,15 @@ Contains my personal development environment configuration files. I use the
 
 ## Installation
 
+```
+
+git clone --recurse-submodules https://github.com/eddyekofo94/.files ~/.filesr
+cd ~/.files/
+bin/install
+
+```
+
+
 ## TODO & DONE
 
 | Plugin           | Status | Improvements                                   |
