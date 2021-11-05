@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+if dot::os::linux; then
+    sudo apt-get install openjdk-17-jdk
+fi

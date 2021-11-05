@@ -16,8 +16,8 @@ set laststatus=2
 call plug#begin('~/.vim/plugged')
 " On-demand lazy load
 Plug 'liuchengxu/vim-which-key'
-Plug 'numtostr/gruvbox-material' " My fav theme
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'numtostr/gruvbox-material'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
@@ -32,6 +32,7 @@ Plug 'pacha/vem-tabline'
 Plug 'airblade/vim-gitgutter'
 Plug 'blankname/vim-fish'
 Plug 'mhinz/vim-startify'
+Plug 'psliwka/vim-smoothie'
 " Plug 'Yggdroot/indentLine'
 
 Plug 'bfrg/vim-cpp-modern'
@@ -56,7 +57,7 @@ if !has('gui_running')
     set guioptions-=r
 
 endif
-colo gruvbox-material
+colo onedark
 " Sets: - general conghigs
 set nocompatible
 set exrc                                " For custumised vim setting (will load vim files in project) No
@@ -205,52 +206,11 @@ cmap Q q
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Use `[c` and `]c` to navigate diagnostics
-nmap <silent> [d <Plug>(coc-diagnostic-prev)
-nmap <silent> ]d <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
-
-" Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-" Remap for do codeAction of selected region,
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 

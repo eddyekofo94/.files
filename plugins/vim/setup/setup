@@ -1,2 +1,3 @@
+#!/usr/bin/env sh
 
 dot::symlink "$HOME" "$DOT_PLUGIN_DIR/etc/.vimrc"

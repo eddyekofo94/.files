@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 if [ -z "${HOME:+x}" ]; then
   echo "ERROR: HOME environment variable not defined!"
   exit 1
