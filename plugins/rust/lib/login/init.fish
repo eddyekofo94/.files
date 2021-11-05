@@ -1,4 +1,6 @@
-sh $HOME/.cargo/env
+# sh $HOME/.cargo/env
+set Ua fish_user_paths $HOME/.cargo/bin
+
 abbr --add cg 'cargo'
 abbr --add cgi 'cargo install'
 abbr --add cgu 'cargo uninstall'

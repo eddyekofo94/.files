@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 os_uname="$(uname | tr '[:upper:]' '[:lower:]')"
 
 case "$os_uname" in

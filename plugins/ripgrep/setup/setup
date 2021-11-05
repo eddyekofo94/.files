@@ -1,3 +1,7 @@
 #!/usr/bin/env sh
 
-formula ripgrep
+if dot::os::mac; then
+    formula ripgrep
+else
+    cargo install ripgrep
+fi

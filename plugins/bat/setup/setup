@@ -3,6 +3,8 @@
 if dot::os::mac; then
   formula bat
   formula eth-p/software/bat-extras
+else
+  cargo install bat
 fi
 
 bat cache --build
