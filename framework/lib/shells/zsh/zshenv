@@ -15,6 +15,9 @@ else
   export DOT_FRAMEWORK_DIR="$(cd "$(dirname "$(dirname "$(dirname "$(dirname "$(readlink "$__file__")")")")")" && pwd)"
   export DOT_HOME="$(dirname "$DOT_FRAMEWORK_DIR")"
 
+  # Directory where user-specific configuration files should be stored.
+  export XDG_CONFIG_HOME="$HOME/.config"
+
   export DOT_SHELL=zsh
   export DOT_BACKUPS_DIR="$DOT_HOME/.backups"
   export DOT_PLUGINS_DIR="$DOT_HOME/plugins"
@@ -55,3 +58,6 @@ else
   fi
 fi
 source "$HOME/.cargo/env"
+
+# Directory where user-specific configuration files should be stored.
+export XDG_CONFIG_HOME="$HOME/.config"

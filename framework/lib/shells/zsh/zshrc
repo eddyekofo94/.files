@@ -39,3 +39,6 @@ else
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Directory where user-specific configuration files should be stored.
+export XDG_CONFIG_HOME="$HOME/.config"
