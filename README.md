@@ -7,7 +7,7 @@ Contains my personal development environment configuration files. I use the
 
 ```
 
-git clone --recurse-submodules https://github.com/eddyekofo94/.files ~/.filesr
+git clone --recurse-submodules https://github.com/eddyekofo94/.files ~/.files
 cd ~/.files/
 bin/install
 
