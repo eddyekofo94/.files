@@ -1,3 +1,9 @@
-export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
-export PATH="/usr/local/opt/llvm/bin:$PATH"
+#!/usr/bin/env sh
+if dot::os::mac; then
+    export PATH="/usr/local/opt/llvm/bin:$PATH"
+else
+    LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/llvm/lib -Wl,-rpath,/home/linuxbrew/.linuxbrew/opt/llvm/lib"
+fi
+
+
 
