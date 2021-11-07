@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+if dot::os::mac; then
+    formula stylua luarocks
+else
+    cargo install stylua
+    brew install luarocks
+fi
