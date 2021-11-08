@@ -11,5 +11,4 @@ fish_vi_key_bindings
 #        theme_gruvbox dark
 #end
 
-set -x SHELL /usr/local/bin/fish
-
+set -x SHELL (which fish)
