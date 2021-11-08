@@ -1,1 +1,1 @@
-# export LS_COLORS=(vivid generate one-dark)
+export LS_COLORS="$(vivid generate one-dark)"
