@@ -23,10 +23,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Directory where user-specific non-essential data files should be stored.
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# add ruby gems to path
+# TODO: move to ruby folder! ruby gems to path
 PATH=$PATH:/usr/local/lib/ruby/gems/3.0.0/bin
 
 # export JAVA_HOME="/usr/libexec/java_home"
-export JAVA_HOME="/Users/eddyekofo/Library/Java/JavaVirtualMachines/temurin-1.8.0_302/Contents/Home"
-
-PATH=$PATH:/usr/local/opt/openjdk@8/bin

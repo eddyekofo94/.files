@@ -1,1 +1,15 @@
-export JAVA_HOME="/usr/libexec/java_home:$PATH"
+# export JAVA_HOME="/usr/libexec/java_home:$PATH"
+# INFO: WSL JDK 17
+# export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+
+# WSL JDK 11
+# export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+# sdkman java_home
+export JAVA_HOME='$SDKMAN_DIR/candidates/java/current'
+# INFO: Macos
+# export JAVA_HOME="/Users/eddyekofo/Library/Java/JavaVirtualMachines/temurin-1.8.0_302"
+PATH=$PATH:/usr/local/opt/openjdk@8/bin
+
+
+
+

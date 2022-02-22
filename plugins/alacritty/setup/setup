@@ -5,7 +5,7 @@ formula alacritty
 alacritty_config_dir="$XDG_CONFIG_HOME/alacritty"
 
 if [ ! -d "$alacritty_config_dir" ]; then
-   mkdir $alacritty_config_dir 
+   mkdir $alacritty_config_dir
 fi
 
-dot::symlink "$DOT_PLUGIN_DIR/alacritty/etc/alacritty.yml" "$XDG_CONFIG_HOME/alacritty/alacritty.yml" 
+# dot::symlink "$DOT_PLUGIN_DIR/alacritty/etc/alacritty.yml" "$XDG_CONFIG_HOME/alacritty/alacritty.yml"
